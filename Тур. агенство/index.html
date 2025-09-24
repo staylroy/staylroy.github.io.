@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+    <!-- Favicon для современных браузеров -->
+<link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stayl Travely — стильные путешествия</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="logo.png" alt="Stayl Travely logo" /></div>
+      <div class="brand-text">
+        <div class="brand-name">Stayl Travely</div>
+        <div class="brand-sub">Стильные путешествия без границ</div>
+      </div>
+    </div>
+
+    <nav class="topnav">
+      <a href="#destinations">Направления</a>
+      <a href="#services">Услуги</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+      <a class="btn pulse" href="#booking">Забронировать</a>
+    </nav>
+
+    <button class="mobile-menu" aria-label="menu">☰</button>
+  </header>
+
+  <!-- Overlay для мобильного меню -->
+  <div class="nav-overlay" id="navOverlay">
+    <nav class="topnav">
+      <a href="#destinations">Направления</a>
+      <a href="#services">Услуги</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+      <a class="btn pulse" href="#booking">Забронировать</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero + форма -->
+    <section class="hero animate-on-scroll">
+      <div class="hero-card animate-on-scroll delay-1">
+        <h1>Stayl Travely — стильные путешествия без границ</h1>
+        <p class="lead">Подберём поездку под ваши мечты и стиль жизни.</p>
+
+        <div class="search">
+          <input id="q-destination" type="text" placeholder="Куда хотите? (Париж, Мальдивы)" />
+          <select id="q-type">
+            <option value="">Любой тип</option>
+            <option>Пляжный</option>
+            <option>Экскурсионный</option>
+            <option>Активный / Трекинг</option>
+            <option>Семейный</option>
+          </select>
+          <button id="searchBtn">Найти</button>
+        </div>
+
+        <div class="promo">
+          <div class="small">Горящие туры от</div>
+          <div class="price count-up pulse" data-target="9990">0 ₽</div>
+        </div>
+
+      <aside class="booking animate-on-scroll delay-2" id="booking">
+        <h3>Быстрая заявка</h3>
+        <div class="small">Заполните форму — мы свяжемся в течение рабочего дня.</div>
+
+        <form id="bookingForm" novalidate>
+          <label for="name">Имя</label>
+          <input type="text" id="name" placeholder="Ваше имя" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="name@mail.ru" required />
+
+          <div class="row">
+            <div class="col">
+              <label for="to">Туда</label>
+              <input type="text" id="to" placeholder="Направление" />
+            </div>
+            <div class="col">
+              <label for="date">Дата вылета</label>
+              <input type="date" id="date" />
+            </div>
+          </div>
+          <label for="people">Количество человек</label>
+            <input type="number" id="people" min="1" value="1" />
+
+            <label>Дополнительные услуги</label>
+                <div class="extras-options">
+                <div class="extra" data-value="Трансфер">Трансфер</div>
+                <div class="extra" data-value="Экскурсия">Экскурсия</div>
+                <div class="extra" data-value="Страховка">Страховка</div>
+                </div>
+            </select>
+            
+
+          <label for="note">Комментарий</label>
+          <input type="text" id="note" placeholder="Пожелания, количество человек..." />
+
+          <div class="form-actions">
+            <button type="button" class="btn pulse" id="submitBtn">Отправить</button>
+          </div>
+        </form>
+      </aside>
+    </section>
+
+        <!-- Популярные направления (только 3) -->
+    <section id="destinations" class="animate-on-scroll">
+      <div class="section-title">
+        <h2>Популярные направления</h2>
+        <a class="small" href="all-destinations.html">Смотреть всё →</a>
+      </div>
+
+      <div class="grid" id="destinationsGrid">
+        
+      </div>
+    </section>
+    <section id="services">
+        <h2>Наши услуги</h2>
+        <div class="grid services-grid">
+          <div class="card service">
+            <h4>Индивидуальные туры под ваш стиль</h4>
+            <p class="small">Подбор маршрутов по вашему вкусу и бюджету.</p>
+          </div>
+          <div class="card service">
+            <h4>Визы и документы</h4>
+            <p class="small">Поможем с визами, страховками и перелётами.</p>
+          </div>
+          <div class="card service">
+            <h4>Корпоративные поездки</h4>
+            <p class="small">Организация бизнес-туров и тимбилдингов.</p>
+          </div>
+          <div class="card service">
+            <h4>Экскурсии и гиды</h4>
+            <p class="small">Авторские экскурсии с локальными гидами.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="section-title">
+          <h2>Отзывы клиентов</h2>
+          <div class="small">Нам доверяют путешественники</div>
+        </div>
+
+        <div class="test-slider" id="reviewsRow">
+          <div class="test"><strong>Анна</strong><p class="small">С Stayl Travely каждое путешествие стало событием!</p></div>
+          <div class="test"><strong>Игорь</strong><p class="small">Организация и поддержка 24/7 — на высоте.</p></div>
+          <div class="test"><strong>Ольга</strong><p class="small">Спасибо за поездку мечты — всё продумано!</p></div>
+        </div>
+         <!-- Форма добавления отзыва -->
+        <div class="booking" style="margin-top:20px;">
+            <h3>Оставить отзыв</h3>
+            <form id="reviewForm" novalidate>
+            <label for="reviewName">Имя</label>
+            <input type="text" id="reviewName" placeholder="Ваше имя" required />
+            <label for="reviewText">Отзыв</label>
+            <input type="text" id="reviewText" placeholder="Ваш отзыв..." required />
+            <div class="form-actions">
+                <button type="button" class="btn" id="reviewBtn">Отправить отзыв</button>
+            </div>
+            </form>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Контакты</h2>
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <h4>Офис — Санкт-Петербург</h4>
+            <p class="small">Адрес: Невский пр., 1</p>
+            <p class="small">Телефон: +7 (931)-271-85-61</p>
+            <p class="small">Email: Staylroy@gmail.com</p>
+          <div class="card contact-card">
+             <div class="social-icons">
+                <a href="https://t.me/Wg_Rick" target="_blank" aria-label="Telegram">
+                <img src="https://i2.wp.com/logos-world.net/wp-content/uploads/2021/03/Telegram-Emblem.png" alt="Telegram">
+                </a>
+                <a href="https://wa.me/79312718561" target="_blank" aria-label="WhatsApp">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077055.png" alt="WhatsApp">
+                </a>
+                <a href="https://vk.com" target="_blank" aria-label="VK">
+                <img src="https://static.insales-cdn.com/files/1/2615/31509047/original/Instagram_Color_icon.png" alt="VK">
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                <img src="https://images.icon-icons.com/2997/PNG/512/tiktok_logo_icon_187623.png" alt="TikTok">
+                </a>
+            </div>
+            <h4>Карта</h4>
+            <div class="map-placeholder">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.123456789!2d30.31413!3d59.93863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696312e1c8d1d11%3A0xabcdef123456789!2z0JLQvtGB0YLQsNC90LDRgNC-0YHRgtCw!5e0!3m2!1sru!2s!4v1695555555555!5m2!1sru!2s" 
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>© <strong>Stayl Travely</strong> — все права защищены, 2025</div>
+    </div>
+    <button id="clearReviewsBtn" class="btn" data-enabled="false">Очистить отзывы</button>
+
+  </footer>
+</div>
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>Спасибо!</h3>
+    <p>Ваша заявка принята. Мы свяжемся с вами в ближайшее время.</p>
+  </div>
+</div>
+ <!-- Фоновое изображение SVG -->
+  <div class="background-svg">
+    <svg width="100%" height="100%" style="position: fixed; top:0; left:0; z-index: -1;">
+      <!-- Пример: несколько лёгких контурных иконок -->
+      <circle cx="50" cy="100" r="20" stroke="#0f3d2e" stroke-opacity="0.05" fill="none"/>
+      <circle cx="200" cy="300" r="30" stroke="#0f3d2e" stroke-opacity="0.04" fill="none"/>
+      <path d="M10 10 L100 50" stroke="#0f3d2e" stroke-opacity="0.03"/>
+      <path d="M150 50 L250 120" stroke="#0f3d2e" stroke-opacity="0.03"/>
+      <text x="300" y="150" font-size="40" fill="rgba(15,61,46,0.05)">✈</text>
+      <text x="400" y="300" font-size="50" fill="rgba(15,61,46,0.04)">🏝</text>
+    </svg>
+  </div>
+
+  <!-- Остальной контент сайта -->
+  <div class="container">
+    <!-- header, main, карточки, форма и т.д. -->
+  </div>
+
+
+<script src="all-destinations.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

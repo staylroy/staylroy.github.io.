@@ -1,0 +1,322 @@
+:root{
+  --accent: #0f3d2e; /* темно-зелёный */
+  --dark: #1a1a1a;
+  --muted: #a0b2a1;
+  --card: #f7f9f7;
+  --bg-1: #e6f0eb;
+  --maxw: 1200px;
+  --radius: 12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg-1) 0%, #dfeee5 100%);
+  color: var(--dark);
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo img {
+  width: 80px;   /* увеличили размер */
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* лёгкая тень для выделения */
+}
+.brand-text .brand-name{font-weight:800}
+.brand-text .brand-sub{font-size:12px;color:var(--muted)}
+.topnav a{margin-left:18px;color:var(--dark);text-decoration:none;font-weight:600;transition:0.3s}
+.topnav a:hover{color:var(--accent)}
+.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn:hover{transform:scale(1.05);box-shadow:0 6px 16px rgba(0,0,0,0.3)}
+.mobile-menu{display:none;background:transparent;border:0;font-size:24px;cursor:pointer}
+
+/* Overlay menu */
+.nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:1000}
+.nav-overlay.show{display:flex}
+.nav-overlay .topnav{flex-direction:column;gap:20px}
+.nav-overlay a{color:white;font-size:24px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+.hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.95),white);padding:28px;border-radius:16px;box-shadow:0 6px 24px rgba(2,6,23,0.06)}
+h1{margin:0 0 12px;font-size:34px}
+.lead{margin:0 0 18px;color:var(--muted)}
+
+.search{display:flex;gap:8px}
+.search input, .search select{flex:1;padding:12px;border-radius:10px;border:1px solid #e6eef0}
+.search button{padding:12px 18px;border-radius:10px;border:0;background:var(--dark);color:white;cursor:pointer}
+
+/* Promo */
+.promo{display:flex;gap:12px;margin-top:14px;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+.price{font-weight:800;color:var(--accent)}
+
+/* Cards & grid */
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.06);transition:0.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(0,0,0,0.2)}
+.card img{width:100%;height:160px;object-fit:cover;display:block}
+.card .body{padding:14px}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+
+/* Booking aside */
+.booking{padding:18px;background:linear-gradient(180deg,#ffffff,#f7feff);border-radius:12px}
+label{display:block;margin:8px 0 6px;font-size:13px;color:var(--muted)}
+input[type="text"],input[type="email"],input[type="date"],select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef0}
+.row{display:flex;gap:12px}
+.row .col{flex:1}
+.form-actions{margin-top:12px;display:flex;gap:8px;justify-content:flex-end}
+
+/* Services */
+.services-grid .card{padding:18px}
+
+/* Testimonials */
+.test-slider{display:flex;gap:12px;overflow:hidden}
+.test{min-width:280px;background:linear-gradient(180deg,#fff,#fcffff);padding:16px;border-radius:12px;border:1px solid #f0f6f6}
+
+/* Contact */
+.contact-grid{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.contact-card{flex:1;min-width:260px;padding:16px}
+.map-placeholder{background:#f1f7f7;border-radius:8px;padding:18px;text-align:center;color:var(--muted)}
+
+/* Footer */
+footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:14px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+
+/* Animations */
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:0.85}}
+.btn.pulse, .promo .price.pulse{animation:pulse 1.2s infinite ease-in-out}
+.animate-on-scroll{opacity:0;transform:translateY(20px);transition:0.6s ease-out}
+.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:0.2s}
+.delay-2{transition-delay:0.4s}
+.delay-3{transition-delay:0.6s}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .topnav{display:none}
+  .mobile-menu{display:block}
+  .grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+:root{
+  --accent:#ff7f50;      /* ярко-оранжевый для кнопок */
+  --accent-hover:#ff945c; /* чуть светлее при наведении */
+  --dark:#fff;           /* основной цвет текста */
+  --muted:#c0c0b0;       /* второстепенный текст */
+  --card:#1e2d27;        /* цвет карточек */
+  --bg-1:#0f3d2e;        /* фон страницы */
+  --maxw:1200px;
+  --radius:12px;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg-1) 0%,#0b2a1e 100%);
+  color:var(--dark);
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:24px}
+a{color:var(--accent);}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo img{width:48px;height:48px;border-radius:10px;object-fit:cover}
+.brand-text .brand-name{font-weight:800}
+.brand-text .brand-sub{font-size:12px;color:var(--muted)}
+.topnav a{margin-left:18px;color:var(--dark);text-decoration:none;font-weight:600}
+.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer;transition:0.3s}
+.btn:hover{background:#13a26d}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+.hero-card{background:#1e2d27;padding:28px;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,0.4)}
+h1{margin:0 0 12px;font-size:34px}
+.lead{margin:0 0 18px;color:var(--muted)}
+.search{display:flex;gap:8px}
+.search input,.search select{flex:1;padding:12px;border-radius:10px;border:1px solid #2a4436;background:#0b2a1e;color:white}
+.search button{padding:12px 18px;border-radius:10px;border:0;background:var(--dark);color:white;cursor:pointer}
+.promo{display:flex;gap:12px;margin-top:14px;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+.price{font-weight:800;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+.card img{width:100%;height:160px;object-fit:cover;display:block}
+.card .body{padding:14px}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.booking{padding:18px;background:#1e2d27;border-radius:12px}
+label{display:block;margin:8px 0 6px;font-size:13px;color:var(--muted)}
+input[type="text"],input[type="email"],input[type="date"],select{width:100%;padding:10px;border-radius:8px;border:1px solid #2a4436;background:#0b2a1e;color:white}
+.row{display:flex;gap:12px}
+.row .col{flex:1}
+.form-actions{margin-top:12px;display:flex;gap:8px;justify-content:flex-end}
+.test-slider{display:flex;gap:12px;overflow-x:auto}
+.test{min-width:280px;background:#0b2a1e;padding:16px;border-radius:12px;border:1px solid #2a4436;color:white}
+.contact-grid{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.contact-card{flex:1;min-width:260px;padding:16px}
+.map-placeholder{background:#0b2a1e;border-radius:8px;padding:18px;text-align:center;color:var(--muted)}
+footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:14px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+/* Modal */
+.modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center}
+.modal-content{background:#1e2d27;padding:24px;border-radius:12px;max-width:400px;width:90%;text-align:center;animation:fadeIn 0.4s ease;color:white;position:relative}
+.modal-close{position:absolute;top:12px;right:16px;font-size:24px;cursor:pointer;color:white}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.nav-overlay{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);flex-direction:column;justify-content:center;align-items:center}
+.nav-overlay.show{display:flex}
+.nav-overlay .topnav{flex-direction:column}
+.nav-overlay .topnav a{margin:12px 0;font-size:24px;color:white;text-decoration:none}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.topnav{display:none}.mobile-menu{display:block}.grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}}
+.animate-on-scroll{opacity:0;transform:translateY(20px);transition:0.6s}
+.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+
+@keyframes fly {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(-4px) rotate(15deg); }
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "TRAVEL";
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.1);
+  transform: rotate(25deg);
+  font-weight: bold;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent);
+  top: -50px;
+  left: -50px;
+  z-index: 0;
+  animation: floatGlobe 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlobe {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.hero-card {
+  position: relative;
+  z-index: 1;
+}
+.card {
+  background: #1e2d27;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+}
+
+.card::after {
+  content: "TRAVEL";
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.08);
+  transform: rotate(25deg);
+  font-weight: bold;
+}
+
+.card-images {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.card-images img {
+  flex: 1;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.card-images img:hover {
+  transform: scale(1.05);
+}
+#clearReviewsBtn[disabled],
+#clearReviewsBtn[data-enabled="false"] {
+  opacity: 0.0;
+  pointer-events: none; /* отключает клики */
+  cursor: default;
+}
+.logo img {
+  width: 120px;               /* увеличенный размер */
+  height: 120px;
+  border-radius: 16px;        /* мягкие углы */
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* лёгкая тень для выделения */
+  border: 3px solid #ff7f50;  /* новый цвет рамки, например оранжевый */
+  background-color: #0f3d2e;  /* фон логотипа для контраста */
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05); /* лёгкое увеличение при наведении */
+}
+.social-icons{display:flex;gap:10px;margin-top:10px}
+.social-icons img{width:24px;height:24px;transition:0.3s}
+.social-icons img:hover{transform:scale(1.2)}
+.topnav{display:flex;gap:18px;transition:0.3s}
+.topnav.open{display:flex;flex-direction:column;position:absolute;top:70px;right:24px;background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.1)}
+@media(max-width:900px){
+  .topnav{display:none;flex-direction:column}
+}
+.extras-options{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.extra{
+  padding:10px 16px;
+  border-radius:12px;
+  background:var(--bg-1);
+  border:1px solid var(--muted);
+  cursor:pointer;
+  transition:0.3s;
+  user-select:none;
+}
+.extra.selected{
+  background:var(--accent);
+  color:white;
+  border-color:var(--accent);
+  font-weight:600;
+}
+.extra:hover{
+  transform:scale(1.05);
+  border-color:var(--accent);
+}
+.background-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* чтобы клики шли по сайту */
+  z-index: -1; /* чтобы не перекрывать контент */
+}
+.hero-card {
+margin: auto;
+}
