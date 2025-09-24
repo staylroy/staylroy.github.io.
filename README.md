@@ -1,1 +1,0 @@
-# staylroy.github.io.
